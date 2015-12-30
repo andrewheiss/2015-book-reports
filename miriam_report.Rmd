@@ -157,7 +157,7 @@ It's hard to type in books immediately after finishing them, so we had a regular
 
 # Results
 
-As always, the [raw data](`r url`) and [code](https://github.com/andrewheiss/2015-book-reports) are all available online if you want to follow along.
+As always, the [raw data](`r url`) and [code](https://github.com/andrewheiss/2015-book-reports) are all available online if you want to follow along. You can [read this on our family blog](http://www.heissatopia.com/2015/12/miriams-2015-reading-report.html) too.
 
 ## Summary statistics
 
