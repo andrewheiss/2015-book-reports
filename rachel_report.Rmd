@@ -270,7 +270,8 @@ books.per.month <- mean(books.month$num.books)
 pages.per.week <- mean(books.week$num.pages)
 books.per.week <- mean(books.week$num.books)
 
-break.diff <- t.test(num.books ~ school.break, data=books.week)
+break.diff.books <- t.test(num.books ~ school.break, data=books.week)
+break.diff.pages <- t.test(num.pages~ school.break, data=books.week)
 ```
 
 Looking at how Rachel read throughout the year also shows some interesting patterns. The amount she read was not very stable—she only read 9 books in May (one was *Fellowship of the Rings*, which probably explains the slowdown), while reading around 30 in July, November, and December (July because of our huge road trip, December because of Christmas break, and November because… reasons?). On average she read around `r prettyNum(round(books.per.month, 0), big.mark=",")` books and around `r prettyNum(signif(pages.per.month, 2), big.mark=",")` pages each month, or `r prettyNum(round(books.per.week, 0), big.mark=",")` books and around `r prettyNum(signif(pages.per.week, 2), big.mark=",")` pages every week.
@@ -306,7 +307,7 @@ ggplot(books.week.long, aes(x=week.date, y=number)) +
   theme_clean()
 ```
 
-Though it seems that she read more during breaks from school, the difference between the average number of books and pages in weeks in school and on break is not statistically significant (`r clean.t(break.diff)`).
+Though it seems that she read more during breaks from school, the difference between the average number of books and pages in weeks in school and on break is not statistically significant (books: `r clean.t(break.diff.books)`; pages: `r clean.t(break.diff.pages)`).
 
 ```{r books_pages_violin, echo=FALSE, fig.width=6, fig.height=2.5, warning=FALSE}
 break.plot <- books.week %>%
