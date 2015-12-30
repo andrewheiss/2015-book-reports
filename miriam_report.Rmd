@@ -188,7 +188,7 @@ num.authors <- length(authors.ordered)
 books.by.top <- sum(top.authors)
 ```
 
-Miriam read books by only `r num.authors` different authors. She adored the *Rainbow Magic* and *The Magic Tree House* series (so much that we had to ban her from checking out the fairy books from the library in August). Once we stopped fairies and treehouses—and after some convincing)—Miriam fell in love with Nancy Drew and also started to branch out to other books and authors. `r round(books.by.top / num.books * 100)`% of the books she read were written by only 15 authors; an astonishing `r round(authors.ordered[1] / num.books * 100)`% were written by Daisy Meadows (!). 
+Miriam read books by only `r num.authors` different authors. She adored the *Rainbow Magic* and *The Magic Tree House* series (so much that we had to ban her from checking out the fairy books from the library in August). Once we stopped fairies and tree houses—and after some convincing—Miriam fell in love with Nancy Drew and also started to branch out to other books and authors. `r round(books.by.top / num.books * 100)`% of the books she read were written by only 15 authors; an astonishing `r round(authors.ordered[1] / num.books * 100)`% were written by Daisy Meadows (!). 
 
 ```{r top_authors, echo=FALSE, fig.width=6, fig.height=3.5, warning=FALSE}
 author.plot.data <- books %>%
@@ -263,7 +263,7 @@ break.diff.pages <- t.test(num.pages~ school.break, data=books.week)
 slowest.month <- filter(books.month, month == "January")$num.books
 ```
 
-Looking at how Miriam read throughout the year also shows some interesting patterns. It took a while for her to get started—she only read `r slowest.month` books in January, her slowest month. After that, though, she was a monster and read 20-30 books a month. Once school started, though, she slowed down considerably—skipping kindergarten and dealing with 1st grade apparently had some negative effects. In August she started a sort of unconcious reading boycott and would either go to sleep right away (skipping reading time) or start a book and never finish it (sometimes with only 4 pages left). Nancy's theory is that she was afraid of a literary [#showhole](https://www.youtube.com/watch?v=kdj9k4jsw-c) and didn't want the book to end.
+Looking at how Miriam read throughout the year also shows some interesting patterns. It took a while for her to get started—she only read `r slowest.month` books in January, her slowest month. After that, though, she was a monster and read 20-30 books a month. Once school started, though, she slowed down considerably—skipping kindergarten and dealing with 1st grade apparently had some negative effects. In August she started a sort of unconscious reading boycott and would either go to sleep right away (skipping reading time) or start a book and never finish it (sometimes with only 4 pages left). Nancy's theory is that she was afraid of a literary [#showhole](https://www.youtube.com/watch?v=kdj9k4jsw-c) and didn't want the book to end.
 
 On average she read around `r prettyNum(round(books.per.month, 0), big.mark=",")` books and around `r prettyNum(signif(pages.per.month, 2), big.mark=",")` pages each month, or `r prettyNum(round(books.per.week, 0), big.mark=",")` books and around `r prettyNum(signif(pages.per.week, 2), big.mark=",")` pages every week.
 
@@ -281,7 +281,7 @@ ggplot(books.month.long, aes(x=month, y=number)) +
   theme_clean()
 ```
 
-Weekly data gives a more granular look at these trends. Notably, there are a few weeks where Miriam didn't read anything at all—the first few weeks of the yar, a week in May, the first week of school, and the week of Christmas. She found new motivation to read after Christmas, though, and has been reading like a maniac this week.
+Weekly data gives a more granular look at these trends. Notably, there are a few weeks where Miriam didn't read anything at all—the first few weeks of the year, a week in May, the first week of school, and the week of Christmas. She found new motivation to read after Christmas, though, and has been reading like a maniac this week.
 
 ```{r books_pages_week, echo=FALSE, fig.width=11, fig.height=6, warning=FALSE}
 ggplot(books.week.long, aes(x=week.date, y=number)) + 

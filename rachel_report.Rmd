@@ -290,7 +290,7 @@ ggplot(books.month.long, aes(x=month, y=number)) +
   theme_clean()
 ```
 
-Weekly data gives a more granular look at these trends. Notably, there are a few weeks where Rachel didn't read anything at all. *Lord of the Rings* killed pretty much all reading in May, and early fall was inexcplicably hard on reading.
+Weekly data gives a more granular look at these trends. Notably, there are a few weeks where Rachel didn't read anything at all. *Lord of the Rings* killed pretty much all reading in May, and early fall was inexplicably hard on reading.
 
 ```{r books_pages_week, echo=FALSE, fig.width=11, fig.height=6, warning=FALSE}
 ggplot(books.week.long, aes(x=week.date, y=number)) + 
